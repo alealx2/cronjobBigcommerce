@@ -18,6 +18,7 @@ public class Program
     private static readonly string FtpPass = Environment.GetEnvironmentVariable("FTP_PASS");
     private static readonly string BigCommerceApiUrl = Environment.GetEnvironmentVariable("BIGCOMMERCE_API_URL");
     private static readonly string BigCommerceToken = Environment.GetEnvironmentVariable("BIGCOMMERCE_TOKEN");
+    private const string FtpFilePath = "/Stock.txt";
 
     static async Task Main()
     {
