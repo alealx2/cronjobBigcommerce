@@ -12,13 +12,12 @@ using System.Linq;
 
 public class Program
 {
-    private const string FtpHost = "ftp.guz.mx";
-    private const string FtpUser = "adan@guz.mx";
-    private const string FtpPass = "p3606T3606!45#72";
-    private const string FtpFilePath = "/Stock.txt";
 
-    private const string BigCommerceApiUrl = "https://api.bigcommerce.com/stores/oqdevwmnzx/v3/catalog/products";
-    private const string BigCommerceToken = "4i5q3o1cni0z5240ppgnqlabcksapxu";
+    private static readonly string FtpHost = Environment.GetEnvironmentVariable("FTP_HOST");
+    private static readonly string FtpUser = Environment.GetEnvironmentVariable("FTP_USER");
+    private static readonly string FtpPass = Environment.GetEnvironmentVariable("FTP_PASS");
+    private static readonly string BigCommerceApiUrl = Environment.GetEnvironmentVariable("BIGCOMMERCE_API_URL");
+    private static readonly string BigCommerceToken = Environment.GetEnvironmentVariable("BIGCOMMERCE_TOKEN");
 
     static async Task Main()
     {
