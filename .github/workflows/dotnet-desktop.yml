@@ -26,9 +26,10 @@ jobs:
 
       - name: Run application with environment variables
         run: |
-          export FTP_HOST=${{ secrets.FTP_HOST }}
-          export FTP_USER=${{ secrets.FTP_USER }}
-          export FTP_PASS=${{ secrets.FTP_PASS }}
-          export BIGCOMMERCE_API_URL=${{ secrets.BIGCOMMERCE_API_URL }}
-          export BIGCOMMERCE_TOKEN=${{ secrets.BIGCOMMERCE_TOKEN }}
+          $env:FTP_HOST = "${{ secrets.FTP_HOST }}"
+          $env:FTP_USER = "${{ secrets.FTP_USER }}"
+          $env:FTP_PASS = "${{ secrets.FTP_PASS }}"
+          $env:BIGCOMMERCE_API_URL = "${{ secrets.BIGCOMMERCE_API_URL }}"
+          $env:BIGCOMMERCE_TOKEN = "${{ secrets.BIGCOMMERCE_TOKEN }}"
           dotnet run --configuration Release
+        shell: pwsh
